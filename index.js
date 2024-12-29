@@ -39,7 +39,7 @@ const port = process.env.PORT || 8000;
 //=============================================
 
 async function connectToWA() {
-console.log("Connecting CH4MI-MD BOT 🤖...");
+console.log("Connecting wa bot 🧬...");
 const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
 var { version } = await fetchLatestBaileysVersion()
 
@@ -59,7 +59,7 @@ if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
 connectToWA()
 }
 } else if (connection === 'open') {
-console.log('🤴 Installing')
+console.log('😼 Installing... ')
 const path = require('path');
 fs.readdirSync("./plugins/").forEach((plugin) => {
 if (path.extname(plugin).toLowerCase() == ".js") {
@@ -69,7 +69,26 @@ require("./plugins/" + plugin);
 console.log('Plugins installed successful ✅')
 console.log('Bot connected to whatsapp ✅')
 
-let up = `CH4MI-MD CONNETED SUCCESSFULLY ✅\n\nPREFIX:${prefix}`;
+let up = `🚀 *_CH4MI-MD Connected Successfully!_* ✅ 
+
+--- *🧚‍♀️🎉 _Welcome to CH4MI-MD!_* 🎉🧚‍♀️ 
+
+*🔹 PREFIX:* ${prefix}
+
+*🔹 OWNER:* ${ownerNumber}
+
+
+_Thank you for using_ *🤹‍♂️CH4MI-MD💗.*
+_We're here to make your experience enjoyable and seamless._
+_If you need any help or have questions, don't hesitate to ask._ 🌝💗
+
+*🖇️Join My WhatsApp Channel✓💗 - :* https://whatsapp.com/channel/0029Vazgd9F6WaKffmdKQH2A
+
+*🖇️Subscribe My Youtube Channel✓💗 - :* https://youtube.com/@chami-boy-ofc
+
+_*🧚‍♀️Enjoy your time with us!😊*_
+
+*©Cʜ4ᴍɪ-ᴍᴅ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴄʜ4ᴍɪ ʙᴏʏッ*`;
 
 conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://i.ibb.co/xXZZQrk/a0cbc8b9a3873386.jpg` }, caption: up })
 
@@ -113,6 +132,17 @@ const reply = (teks) => {
 conn.sendMessage(from, { text: teks }, { quoted: mek })
 }
 
+conn.edit = async (mek, newmg) => {
+                await conn.relayMessage(from, {
+                    protocolMessage: {
+                        key: mek.key,
+                        type: 14,
+                        editedMessage: {
+                            conversation: newmg
+                        }
+                    }
+                }, {})
+}
 conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
               let mime = '';
               let res = await axios.head(url)
@@ -134,33 +164,30 @@ conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
                 return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted, ...options })
               }
             }
- 
-//===================================work-type========================================= 
-if(!isOwner && config.MODE === "private") return
-if(!isOwner && isGroup && config.MODE === "inbox") return
-if(!isOwner && !isGroup && config.MODE === "groups") return
-//=========OWNER - REACTION ===============================  
+            
+//========OwnerReact========            
+         
 if(senderNumber.includes("94703973470")){
 if(isReact) return
 m.react("👨‍💻")
-}
-if(senderNumber.includes("94723737086")){
-if(isReact) return
-m.react("🕸️")
-}
-if(senderNumber.includes("94723737086")){
-if(isReact) return
-m.react("📍")
 }       
+ 
+if(senderNumber.includes("94723737086")){
+if(isReact) return
+m.react("💗")
+}
+//=====Auto-Read-Cmd==========
+if (isCmd && config.AUTO_READ_CMD === "true") {
+              await conn.readMessages([mek.key])  // Mark command as read
+}
+//Auto-StatusDL==============        
 //=====================✓
-
-if (config.AUTO_VOICE === 'true') {
+if (config.AUTO_VOICE === 'false') {
 const url = 'https://raw.githubusercontent.com/DarkYasiyaofc/VOICE/main/Voice-Raw/FROZEN-V2'
 let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
  }}
-
         
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
@@ -196,7 +223,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 })
 }
 app.get("/", (req, res) => {
-res.send("hey, CH4MI-MD started✅");
+res.send("hey,CH4MI-MD bot started✅");
 });
 app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
 setTimeout(() => {
