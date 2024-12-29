@@ -1,18 +1,16 @@
 const config = require('../config')
 const {cmd , commands} = require('../command')
-
+const os = require("os")
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 cmd({
     pattern: "alive",
     desc: "Check bot online or no.",
     category: "main",
-    react: "👋",
     filename: __filename
 },
 async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-const voice = {
-    alive: ''
-                    }
+     }
 let des = `*👋 Hello ${pushname}*
 
 *╔╭────────────╮╕*
@@ -29,13 +27,13 @@ let des = `*👋 Hello ${pushname}*
 *➣ ᴡʜᴀᴛꜱᴀᴘᴘ ᴄʜᴀɴɴᴇʟ⚡* = https://whatsapp.com/channel/0029Vazgd9F6WaKffmdKQH2A
 
 *©Cʜ4ᴍɪ-ᴍᴅ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴄʜ4ᴍɪ ʙᴏʏッ*`
-await conn.sendMessage(from, { audio: { url: voice.alive }, mimetype: 'audio/mp4', ptt: true }, { quoted: mek })
-return await conn.sendMessage(from,{image: {url: `https://i.ibb.co/xXZZQrk/a0cbc8b9a3873386.jpg`},caption: des},{quoted: mek})
+return await conn.sendMessage(from,{image: {url: config.ALIVE_IMG},caption: config.ALIVE_MSG},{quoted: mek})
 }catch(e){
 console.log(e)
 reply(`${e}`)
 }
 })
+
 
 
 //===========menu========
