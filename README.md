@@ -4,7 +4,7 @@
 <div align="center">
 
      
- [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F01&lines=CH4MI+MD+WATSAPP+BOT+OWNER+CH4MI+BOY)](https://git.io/typing-svg)
+ [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F01&lines=CH4MI+MD+WATSAPP+USER+BOT)](https://git.io/typing-svg)
 
 
 
@@ -32,7 +32,7 @@
 6) 𝙽𝙾𝚆 𝙴𝙽𝙹𝙾𝚈 𝚃𝙷𝙴 𝙲𝙷4𝙼𝙸 𝙼𝙳 𝙱𝙾𝚃.
 
 
-\\\-------------------------------------------//
+\\-------------------------------------------/
 
 
 
