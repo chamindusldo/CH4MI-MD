@@ -2,7 +2,7 @@
 <div align="center">
 
      
- [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F01&lines=CH4MI+MD+WATSAPP+BOT)](https://git.io/typing-svg)
+ [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=F01&lines=CH4MI+MD+WATSAPP+BOT+CREATED+BY+CH4MI+BOY)](https://git.io/typing-svg)
 
 📍ＮＥＷ ＶＥＲＳＩＯＮ...📍
 
