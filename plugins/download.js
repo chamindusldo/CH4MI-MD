@@ -5,10 +5,9 @@ const { cmd, commands } = require('../command')
 // FETCH API URL
 let baseUrl;
 (async () => {
-    let baseUrlGet = await fetchJson(`https://raw.githubusercontent.com/prabathLK/PUBLIC-URL-HOST-DB/main/public/url.json`)
+    let baseUrlGet = await fetchJson(https://raw.githubusercontent.com/prabathLK/PUBLIC-URL-HOST-DB/main/public/url.json)
     baseUrl = baseUrlGet.api
 })();
-
 
 const yourName = "*©Cʜ4ᴍɪ-ᴍᴅ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴄʜ4ᴍɪ ʙᴏʏッ*";
 
